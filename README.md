@@ -1,4 +1,4 @@
-# Project Name
+# Zagat
 
 > Project description
 
