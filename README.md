@@ -4,7 +4,7 @@
 
 ## Related Projects
 
-  - https://github.com/hungry-hungry-hippos/repo
+  - https://github.com/hungry-hungry-hippos
 
 ## Table of Contents
 
