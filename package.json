@@ -9,7 +9,8 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon view/app.js"
+    "start": "nodemon view/app.js",
+    "seed": "node models/index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
