@@ -4,11 +4,11 @@ const indexRouter = require('../routes/index.js');
 const restaurantsRouter = require('../routes/restaurants.js');
 const path = require('path');
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://sparksparker:test123@ds225205.mlab.com:25205/restaurants-test'
-mongoose.connect(mongoDB, { useNewUrlParser: true} );
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// const mongoDB = 'mongodb://sparksparker:test123@ds225205.mlab.com:25205/restaurants-test';
+// mongoose.connect(mongoDB, { useNewUrlParser: true} );
+// mongoose.Promise = global.Promise;
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const port = 3010;
 
