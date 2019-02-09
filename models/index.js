@@ -162,4 +162,18 @@ const save = () => {
   }
 }
 
+const defaultRestaurant = (callback) => {
+  Restaurant.find({id: 1}, (err, data) => {
+    if (err) {
+      callback(err);
+      return;
+    }
+    callback(null, data);
+  });
+};
+
 save();
+
+module.exports = {
+  defaultRestaurant
+};
