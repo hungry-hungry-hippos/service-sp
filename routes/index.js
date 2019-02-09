@@ -10,6 +10,4 @@ router.get('/', (req, res) => {
   res.redirect('/restaurants');
 });
 
-
-
 module.exports = router;
