@@ -8,8 +8,4 @@ const controller = require('../controllers/index.js');
 // are communicating correctly
 router.get('/', controller.index);
 
-router.get('/test', controller.test);
-
-router.post('/test', controller.post);
-
 module.exports = router;
