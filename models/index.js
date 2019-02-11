@@ -1,5 +1,6 @@
 // import the mongoose module
 const mongoose = require('mongoose');
+const _ = require('lodash');
 
 mongoose.connect('mongodb://localhost/restaurants', { useNewUrlParser: true });
 
@@ -83,38 +84,40 @@ const getRandomInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Helper function to pick random image links
-const fakeImagesLengthForArr = fakeImages.length - 1;
-const randomLink = fakeImages[getRandomInclusive(0, fakeImagesLengthForArr)];
-
-// Generate random number of image links
-const randomFakeImages = () => {
-  let imageLinkArr = [];
-  for (var i = 0; i < getRandomInclusive(1, fakeImagesLengthForArr); i++) {
-    imageLinkArr.push(randomLink);
-  }
-  return imageLinkArr;
-};
-
 // Helper function to pick random number
 const randomNum = (min, max) => {
   return Math.random() * (max - min) + min;
 };
 
+// Generate random links random number of times
+const randomFakeImages = () => {
+  return _.sampleSize(fakeImages, getRandomInclusive(1, fakeImages.length));
+};
+
 // Generate random rating
-const randomRating = Number(randomNum(4, 5).toFixed(1));
+const randomRating = () => {
+  return Number(randomNum(4, 5).toFixed(1));
+};
 
 // Generate random cuisine
-const randomCuisine = fakeCuisine[getRandomInclusive(0, fakeCuisine.length - 1)];
+const randomCuisine = () => {
+  return fakeCuisine[getRandomInclusive(0, fakeCuisine.length - 1)];
+};
 
 // Generate random location
-const randomLocation = fakeLocation[getRandomInclusive(0, fakeLocation.length - 1)];
+const randomLocation = () => {
+  return fakeLocation[getRandomInclusive(0, fakeLocation.length - 1)];
+};
 
 // Generate random cost
-const randomCost = fakeCost[getRandomInclusive(0, fakeCost.length - 1)];
+const randomCost = () => {
+  return fakeCost[getRandomInclusive(0, fakeCost.length - 1)];
+};
 
 // Generate random restaurant name
-const randomName = fakeName[getRandomInclusive(0, fakeName.length - 1)];
+const randomName = () => {
+  return fakeName[getRandomInclusive(0, fakeName.length - 1)];
+};
 
 const mainRestaurant = new Restaurant({
   id: 1,
@@ -141,16 +144,16 @@ const save = () => {
   for (var i = 2; i < 101; i++) {
     const fakeRestaurants = new Restaurant({
       id: i,
-      name: randomName,
+      name: randomName(),
       image: randomFakeImages(),
       tag: {
-        cuisine: randomCuisine,
-        location: randomLocation,
-        cost: randomCost
+        cuisine: randomCuisine(),
+        location: randomLocation(),
+        cost: randomCost()
       },
       rating: {
-        zagat: randomRating,
-        google: randomRating
+        zagat: randomRating(),
+        google: randomRating()
       }
     });
     
