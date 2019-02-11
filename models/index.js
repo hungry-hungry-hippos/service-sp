@@ -166,13 +166,23 @@ const save = () => {
 }
 
 const defaultRestaurants = (callback) => {
-  Restaurant.find({id: {$ne: 1}}, {}, {limit: 6}, (err, data) => {
-    if (err) {
-      callback(err);
-      return;
-    }
-    callback(null, data);
-  });
+  Restaurant
+    .aggregate([
+      {$match: 
+        {id: 
+          {$ne: 1}}
+      },
+      {$sample: 
+        {size: getRandomInclusive(1, 6)}
+      }
+    ])
+    .exec((err, data) => {
+      if (err) {
+        callback(err);
+        return;
+      }
+      callback(null, data);
+    });
 };
 
 save();
