@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 // const mongoDB = 'mongodb://sparksparker:test123@ds225205.mlab.com:25205/restaurants-test';
 // mongoose.connect(mongoDB, { useNewUrlParser: true} );
 // mongoose.Promise = global.Promise;
-const { defaultRestaurant } = require('../models/index.js');
+const { defaultRestaurants } = require('../models/index.js');
 // db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const port = 3010;
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // app.use('/restaurants', restaurantsRouter);
 
 app.get('/restaurants', (req, res) => {
-  defaultRestaurant((err, data) => {
+  defaultRestaurants((err, data) => {
     if (err) {
       res.sendStatus(400);
       return;
