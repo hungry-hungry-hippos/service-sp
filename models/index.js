@@ -10,7 +10,7 @@ const getRandomInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const defaultRestaurants = (callback) => {
+const defaultRestaurants = (id, callback) => {
   Restaurant
     .aggregate([
       {$match: 
@@ -23,7 +23,7 @@ const defaultRestaurants = (callback) => {
     ])
     .exec((err, data) => {
       if (err) {
-        callback(err);
+        callback(err, null);
         return;
       }
       callback(null, data);
