@@ -165,8 +165,8 @@ const save = () => {
   }
 }
 
-const defaultRestaurant = (callback) => {
-  Restaurant.find({id: 1}, (err, data) => {
+const defaultRestaurants = (callback) => {
+  Restaurant.find({id: {$ne: 1}}, {}, {limit: 6}, (err, data) => {
     if (err) {
       callback(err);
       return;
@@ -178,5 +178,5 @@ const defaultRestaurant = (callback) => {
 save();
 
 module.exports = {
-  defaultRestaurant
+  defaultRestaurants
 };
