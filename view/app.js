@@ -7,7 +7,7 @@ const pathToAssets = path.join(__dirname, '../client/dist');
 const staticAssets = express.static(pathToAssets);
 const port = process.env.PORT || 3010;
 
-// app.use(staticAssets);
+app.use(staticAssets);
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 
