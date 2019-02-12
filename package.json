@@ -10,7 +10,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon view/app.js",
-    "seed": "node models/index.js"
+    "seed": "node models/defaultRestaurants.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
