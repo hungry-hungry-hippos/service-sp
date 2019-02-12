@@ -78,6 +78,11 @@ const fakeName = [
   'Dumpling Time'
 ];
 
+const fakeLogo = [
+  'https://s3-us-west-1.amazonaws.com/zagarette-dummy-data/zagat.jpg',
+  'https://s3-us-west-1.amazonaws.com/zagarette-dummy-data/google.png'
+];
+
 // Helper function for random integer 
 // between two values, inclusive
 const getRandomInclusive = (min, max) => {
@@ -132,7 +137,8 @@ const mainRestaurant = new Restaurant({
   },
   rating: {
     zagat: 4.5,
-    google: 4.4
+    google: 4.4,
+    logo: fakeLogo
   }
 });
 
@@ -155,7 +161,8 @@ const save = () => {
       },
       rating: {
         zagat: randomRating(),
-        google: randomRating()
+        google: randomRating(),
+        logo: fakeLogo
       }
     });
     

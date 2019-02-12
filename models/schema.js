@@ -13,7 +13,8 @@ const MoreRestaurantsSchema = new mongoose.Schema({
   },
   rating: {
     zagat: Number,
-    google: Number
+    google: Number,
+    logo: Array
   }
 });
 

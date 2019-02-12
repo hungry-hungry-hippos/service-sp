@@ -11,7 +11,7 @@ const RestaurantListEntry = ({restaurant}) => (
     className='restaurant-list-entry'>
     <div
       className='restaurant-list-entry-name'>
-      Name: {restaurant.name}
+      Restaurant: {restaurant.name}
     </div>
     <div
       className='restaurant-list-entry-tags'>
@@ -20,8 +20,20 @@ const RestaurantListEntry = ({restaurant}) => (
             {restaurant.tag.cost}
     </div>
     <div
+      className='restaurant-list-entry-logo-zagat'>
+      {<img
+        src={restaurant.rating.logo[0]}
+      />}
+    </div>
+    <div
       className='restaurant-list-entry-rating-zagat'>
       Zagat Rated: {restaurant.rating.zagat}
+    </div>
+    <div
+      className='restaurant-list-entry-logo-google'>
+      {<img
+        src={restaurant.rating.logo[1]}
+      />}
     </div>
     <div
       className='restaurant-list-entry-rating-google'>
@@ -35,9 +47,7 @@ const RestaurantListEntry = ({restaurant}) => (
           src={pic}
         />
       ))}
-      {console.log(restaurant)}
     </div>
-    
   </div>
 )
 

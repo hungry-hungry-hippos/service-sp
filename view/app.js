@@ -9,7 +9,6 @@ const port = process.env.PORT || 3010;
 
 app.use(staticAssets);
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
   res.send('app.get working');
