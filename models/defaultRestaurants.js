@@ -1,4 +1,6 @@
+const _ = require('lodash');
 const { Restaurant } = require('./schema.js');
+const { db } = require('./index.js');
 
 // Fake Data
 const fakeImages = [
@@ -49,9 +51,31 @@ const fakeCost = [
 const fakeName = [
   'E & J',
   'Super Duper',
-  'Marufuku',
+  'Marufuku Ramen',
   'Farmhouse',
-  'Mensho'
+  'Mensho Tokyo',
+  'Tacorea',
+  'Kitchen Story',
+  'Box Kitchen',
+  'Golden Boy Pizza',
+  'Brenda\'s French Soul Food',
+  'Burma Superstar',
+  'The Front Porch',
+  'The Bird',
+  'Chubby Noodle',
+  'Palm House',
+  'SoMa StrEat',
+  'HRD',
+  'Fondue Cowboy',
+  'Straw',
+  'Liholiho Yacht Club',
+  'Tataki',
+  'Thanh Long',
+  'Zero Zero',
+  'Barrel Head BrewHouse',
+  'Sushirrito',
+  'Hog Island Oyster Co',
+  'Dumpling Time'
 ];
 
 // Helper function for random integer 
@@ -143,4 +167,7 @@ const save = () => {
   }
 }
 
-save();
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  save();
+});
