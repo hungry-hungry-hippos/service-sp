@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import RestaurantList from './RestaurantList.jsx';
 import styles from '../../dist/style.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const API_URL = 'http://localhost:3010/api/restaurants/1';
 

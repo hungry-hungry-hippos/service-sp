@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../dist/style.css';
+import ImageCarousel from './ImageCarousel.jsx';
 
 const getRandomInclusive = (min, max) => {
   min = Math.ceil(min);
@@ -20,6 +21,9 @@ const RestaurantListEntry = ({restaurant}) => (
         className={styles.slideshowContainer}>
         <div
           className={styles.restaurantImage}>
+          <ImageCarousel
+            images={restaurant}
+          />
         </div>
       </div>
     </div>
