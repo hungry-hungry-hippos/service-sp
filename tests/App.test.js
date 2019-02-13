@@ -2,11 +2,9 @@ import React from 'react';
 import 'isomorphic-fetch';
 import { shallow } from 'enzyme';
 
-import App from './App.jsx';
+import App from '../client/src/components/App.jsx';
 
-import '../../../tests/setup.js';
-import RestaurantList from './RestaurantList';
-import { wrap } from 'module';
+import './setup.js';
 
 describe('App component', () => {
   it('starts with a loadState of false', () => {

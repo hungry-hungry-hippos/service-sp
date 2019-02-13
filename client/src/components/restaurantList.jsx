@@ -1,10 +1,11 @@
 import React from 'react';
 import RestaurantListEntry from './RestaurantListEntry.jsx';
+import styles from '../../dist/style.css';
 
 const RestaurantList = ({restaurants}) => (
   <div>
   <div
-    className='restaurant-list-title'>
+    className={styles.title}>
     More Japanese Near Izakaya Sozai
   </div>
   <div

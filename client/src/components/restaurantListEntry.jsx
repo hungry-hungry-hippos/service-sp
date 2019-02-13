@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../dist/style.css';
 
 const getRandomInclusive = (min, max) => {
   min = Math.ceil(min);
