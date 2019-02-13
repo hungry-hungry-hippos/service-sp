@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "sparksparker",
   "version": "",
   "description": "",
   "author": "",
@@ -10,11 +10,14 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon view/app.js",
-    "seed": "node models/defaultRestaurants.js"
+    "seed": "node models/defaultRestaurants.js",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.5",
     "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.10",
@@ -24,9 +27,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
