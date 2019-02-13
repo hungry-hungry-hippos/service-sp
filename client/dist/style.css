@@ -1,3 +1,27 @@
-.title {
-  font-size: 40pt
+.horizontalLine {
+  border-top: 1px solid black;
+}
+
+.restaurantTitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  color: #101820;
+}
+
+.img {
+  position: relative;
+  float: left;
+  width: 264px;
+  height: 218px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel {
+  width: 264px;
+  height: 218px;
+  padding-left: 25px;
 }
