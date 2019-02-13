@@ -5,14 +5,23 @@ const getRandomInclusive = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 const RestaurantListEntry = ({restaurant}) => (
   <div
-    className='restaurant-list-entry'>
+    className={styles.restaurantList}>
     <div
-      className='restaurant-list-entry-name'>
-      Restaurant: {restaurant.name}
+      className={styles.eachRestaurant}>
+      <div
+        className={styles.restaurantName}>
+        Restaurant: {restaurant.name}
+      </div>
+      <div
+        className={styles.slideshowContainer}>
+        <div
+          className={styles.restaurantImage}>
+        </div>
+      </div>
     </div>
     <div
       className='restaurant-list-entry-tags'>
@@ -21,7 +30,7 @@ const RestaurantListEntry = ({restaurant}) => (
             {restaurant.tag.cost}
     </div>
     <div
-      className='restaurant-list-entry-logo-zagat'>
+      className={styles.zagatLogo}>
       {<img
         src={restaurant.rating.logo[0]}
       />}
@@ -31,7 +40,7 @@ const RestaurantListEntry = ({restaurant}) => (
       Zagat Rated: {restaurant.rating.zagat}
     </div>
     <div
-      className='restaurant-list-entry-logo-google'>
+      className={styles.googleLogo}>
       {<img
         src={restaurant.rating.logo[1]}
       />}
@@ -40,16 +49,7 @@ const RestaurantListEntry = ({restaurant}) => (
       className='restaurant-list-entry-rating-google'>
       Google Rated: {restaurant.rating.google}
     </div>
-    <div
-      className='restaurant-list-entry-image'>
-      {restaurant.image.map(pic => (
-        <img
-          key={getRandomInclusive(101, 3000)}
-          src={pic}
-        />
-      ))}
-    </div>
   </div>
-)
+);
 
 export default RestaurantListEntry;
