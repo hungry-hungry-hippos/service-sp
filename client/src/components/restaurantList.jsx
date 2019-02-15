@@ -2,22 +2,33 @@ import React from 'react';
 import RestaurantListEntry from './RestaurantListEntry.jsx';
 import styles from '../../dist/style.css';
 
+const getRandomInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+let id = 2000;
+
 const RestaurantList = ({restaurants}) => (
   <div
-    className={styles.horizontalLine}>
+    className={styles.componentContainer}>
     <div
-      className={styles.restaurantTitle}>
-      More Japanese Near Izakaya Sozai
+      className={styles.topBorder}>
     </div>
     <div
-      className='restaurants'>
-      {restaurants.map(restaurant => (
-        <RestaurantListEntry
-          key={restaurant.id}
-          restaurant={restaurant}
-        />
-      ))}
+      className={styles.headerContainer}>
+      <div
+        className={styles.moreRestaurantsHeader}>
+        More Japanese Near Izakaya Sozai
+      </div>
     </div>
+    {restaurants.map(restaurant => (
+      <RestaurantListEntry
+        key={id++}
+        restaurant={restaurant}
+      />
+    ))}
   </div>
 );
 

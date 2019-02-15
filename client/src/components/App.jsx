@@ -35,8 +35,7 @@ class App extends Component {
     }
     return (
       <div>
-        <div
-          className='restaurants'>
+        <div>
           <RestaurantList
             restaurants={data}
           />

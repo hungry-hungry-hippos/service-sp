@@ -1,28 +1,90 @@
-/* .horizontalLine {
-  border-top: 1px solid black;
+/* webpage container */
+body {
+  background-color: rgb(242, 242, 242);
+  margin-left: 40px;
+  /* margin-right: 40px; */
 }
 
-.restaurantTitle {
+/* container for header && restaurants */
+.componentContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  /* border-top: 1px solid black; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
+}
+
+/* header horizontal line */
+.topBorder {
+  border-top: 1px solid black;
+  width: 97.5%;
+}
+
+/* container for the header */
+.headerContainer {
+  margin-top: 7px;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+/* more restaurants header */
+.moreRestaurantsHeader {
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 32px;
   color: #101820;
-} */
+}
 
-/* .img {
-  position: relative;
-  float: left;
+/* container for all of the restaurant divs */
+.allRestaurantsContainer {
+  display: flex;
+  flex: 0 47%;
+  margin-bottom: 40px;
+  margin-right: 40px;
+}
+
+.eachRestaurantContainer {
+  display: flex;
+}
+
+/* carousel for images */
+.carousel {
   width: 264px;
   height: 218px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* object-fit: cover; */
+  /* margin-left: 15px; */
+  /* padding-left: 25px; */
+}
+
+/* each image */
+.img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-} */
+  /* position: relative; */
+  /* float: left; */
+  /* background-position: 50% 50%; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
 
-/* .carousel {
-  width: 264px;
-  height: 218px;
-  padding-left: 25px;
-} */
+.restaurantName {
+  background-color: white;
+}
+
+/* google logo */
+.googleLogo {
+  width: 18px;
+  height: 18px;
+  object-fit: cover; 
+}
+
+/* zagat logo */
+.zagatLogo {
+  width: 18px;
+  height: 18px;
+  object-fit: cover; 
+}

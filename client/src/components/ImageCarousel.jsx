@@ -17,7 +17,6 @@ class ImageCarousel extends Component {
       direction: null,
     };
     this.handleSelect = this.handleSelect.bind(this);
-    console.log(this.props.images)
   }
 
   handleSelect(selectedIndex, e) {
@@ -30,15 +29,19 @@ class ImageCarousel extends Component {
   render() {
     const { index, direction } = this.state;
 
+    let id = 1001;
+
     return (
       <Carousel
         activeIndex={index}
         direction={direction}
         onSelect={this.handleSelect}
+        indicators={false}
+        interval={null}
       >
-        {/* {this.props.images.image.map(pic => (
+        {this.props.images.image.map(pic => (
           <Carousel.Item
-            key={getRandomInclusive(6001, 10000)}
+            key={id++}
             className={styles.carousel}>
             {<img
               className={`${styles.img} ${styles['d-block']} ${styles['w-100']}`}
@@ -46,21 +49,7 @@ class ImageCarousel extends Component {
               alt="First slide"
             />}
           </Carousel.Item>
-        ))} */}
-        <Carousel.Item>
-          <img
-            className='d-block w-100'
-            src="https://s3-us-west-1.amazonaws.com/zagarette-dummy-data/pexels-photo-70497.jpeg"
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://s3-us-west-1.amazonaws.com/zagarette-dummy-data/pexels-photo-70497.jpeg"
-            alt="Second slide"
-          />
-        </Carousel.Item>
+        ))}
       </Carousel>
     );
   }
