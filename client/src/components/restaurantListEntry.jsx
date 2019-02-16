@@ -22,35 +22,39 @@ const RestaurantListEntry = ({restaurant}) => (
         className={styles.restaurantDetailsContainer}>
         <div
           className={styles.restaurantName}>
-          Restaurant: {restaurant.name}
+          {restaurant.name}
         </div>
         <div
-          className='restaurant-list-entry-tags'>
-          Tags: {restaurant.tag.cuisine}, {' '}
-                {restaurant.tag.location}, {' '}
-                {restaurant.tag.cost}
+          className={styles.restaurantTags}>
+          {restaurant.tag.cuisine} 
+          {' '} 
+          <span>&#183;</span>
+          {' '}
+          {restaurant.tag.location}
+          {' '} 
+          <span>&#183;</span>
+          {' '}
+          {restaurant.tag.cost}
         </div>
         <div
-          className={styles.zagatLogoContainer}>
+          className={styles.logoContainer}>
           {<img
             className={styles.zagatLogo}
             src={restaurant.rating.logo[0]}
           />}
-        </div>
-        <div
-          className='restaurant-list-entry-rating-zagat'>
-          Zagat Rated: {restaurant.rating.zagat}
-        </div>
-        <div
-          className={styles.googleLogoContainer}>
+          <div
+            className='restaurant-list-entry-rating-zagat'>
+            {restaurant.rating.zagat}
+          </div>
+          <span>&#124;</span>
           {<img
             className={styles.googleLogo}
             src={restaurant.rating.logo[1]}
           />}
-        </div>
-        <div
-          className='restaurant-list-entry-rating-google'>
-          Google Rated: {restaurant.rating.google}
+          <div
+            className='restaurant-list-entry-rating-google'>
+            {restaurant.rating.google}
+          </div>
         </div>
       </div>
     </div>

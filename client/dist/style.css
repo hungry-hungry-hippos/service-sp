@@ -46,8 +46,55 @@ body {
   margin-right: 40px;
 }
 
+/* each restaurant container */
 .eachRestaurantContainer {
   display: flex;
+  background-color: white;
+  width: 100%;
+}
+
+/* restaurant details container */
+.restaurantDetailsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.restaurantName {
+  margin-top: 50px;
+  width: 100%;
+  background-color: white;
+}
+
+.restaurantTags {
+  width: 100%;
+  margin-top: -32px;
+}
+
+/* logo container */
+.logoContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: -38px;
+}
+
+/* google logo */
+.googleLogo {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+  margin-top: 2px;
+}
+
+/* zagat logo */
+.zagatLogo {
+  width: 23px;
+  height: 23px;
+  object-fit: cover; 
 }
 
 /* carousel for images */
@@ -69,22 +116,4 @@ body {
   /* background-position: 50% 50%; */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
-}
-
-.restaurantName {
-  background-color: white;
-}
-
-/* google logo */
-.googleLogo {
-  width: 18px;
-  height: 18px;
-  object-fit: cover; 
-}
-
-/* zagat logo */
-.zagatLogo {
-  width: 18px;
-  height: 18px;
-  object-fit: cover; 
 }
